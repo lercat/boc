@@ -17,22 +17,19 @@
             <div class="pt-4 font-weight-bold">Beers</div>
             <div>Nous sommes une communauté de millions de buveurs de bières. Ce blog est open source pour tout ceux qui veulent apporter leur contribution (3) non profit ou pas !!!</div>
             <div> <a href="#">www.ddbieres.com</a> </div>
-
-            <div class="row pt-5">
-                <div class="col-4">
-                    <img src="assets/img/barbar.png" class="w-100" alt="bière barbar">
-                </div>
-                <div class="col-4">
-                    <img src="assets/img/bernardus.png" class="w-100" alt="bière bernardus">
-                </div>
-                <div class="col-4">
-                    <img src="assets/img/erdinger.png" class="w-100" alt="bière erdinger">
-                </div>
-            </div>
+          
         </div>
-        
-
-
+    </div>
+    <div class="row pt-5">
+        <div class="col-4">
+            <img src="assets/img/barbar.png" class="w-100" alt="bière barbar">
+        </div>
+        <div class="col-4">
+            <img src="assets/img/bernardus.png" class="w-100" alt="bière bernardus">
+        </div>
+        <div class="col-4">
+            <img src="assets/img/erdinger.png" class="w-100" alt="bière erdinger">
+        </div>
     </div>
 </div>
 @endsection
