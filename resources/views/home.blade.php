@@ -14,9 +14,9 @@
                 <div class="pr-5"><strong>212</strong> following</div>
             </div>
 
-            <div class="pt-4 font-weight-bold">Beers</div>
-            <div>Nous sommes une communauté de millions de buveurs de bières. Ce blog est open source pour tout ceux qui veulent apporter leur contribution (3) non profit ou pas !!!</div>
-            <div> <a href="#">www.ddbieres.com</a> </div>
+            <div class="pt-4 font-weight-bold">{{ $user->profil->titre}}</div>
+            <div>{{ $user->profil->presentation }}</div>
+            <div> <a href="#">{{ $user->profil->url }}</a></div>
           
         </div>
     </div>
