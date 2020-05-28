@@ -36,7 +36,7 @@
                     <h2>Quoi de mieux qu'une petite mousse pour se détendre</h2>
                 </div>
                 <div>
-                    <img src="assets/img/tictac.jpg" alt="">
+                    <img src="../../assets/img/tictac.jpg" alt="">
                 </div>
                 <div class="links">
                     <a href="#">Mentions Légales</a>

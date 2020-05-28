@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/profil/{user}', 'ProfilsController@index')->name('profil.show');
+
+//cette route dessous car au dessus on veut la page du profil d'un user
 Route::get('/home', 'HomeController@index')->name('home');
