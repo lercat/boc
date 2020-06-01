@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
 {
@@ -20,11 +21,14 @@ class PostsController extends Controller
     {
         $data = request()->validate([
             'legende' => 'required',
-            'description' => '', //champ qui n'est pas obligatoirement rempli
+            'description' => 'required',
             'image' => ['required', 'image'],
         ]);
 
         $imagePath = request('image')->store('uploads', 'public');
+
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image->save();
 
         auth()->user()->posts()->create([
             'legende' => $data['legende'],
@@ -32,6 +36,6 @@ class PostsController extends Controller
             'image' => $imagePath
         ]);
 
-        return redirect('/profil' . auth()->user()->id);
+        return redirect('/profil/' . auth()->user()->id);
     }
 }
