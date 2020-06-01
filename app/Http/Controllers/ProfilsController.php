@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfilsController extends Controller
 {
@@ -15,11 +16,16 @@ class ProfilsController extends Controller
 
     public function edit(User $user)
     {
+        //par rapport au rajout ds policies update profil
+        $this->authorize('update', $user->profil);
+
         return view('profils.edit', compact('user'));
     }
 
     public function update(User $user)
     {
+        $this->authorize('update', $user->profil);
+
         $data = request()->validate([
             'titre' => 'required',
             'presentation' => 'required',
@@ -27,7 +33,18 @@ class ProfilsController extends Controller
             'image' => ''
         ]);
 
-        auth()->user->profil->update($data);
+
+        if(request('image')) {
+            $imagePath = request('image')->store('profil', 'public');
+
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+            $image->save();
+        }
+
+        auth()->user->profil->update(array_merge(
+            $data,
+            ['image' => $imagePath]
+        ));
 
         return redirect("/profil/{$user->id}");
 
