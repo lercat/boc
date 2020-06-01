@@ -19,9 +19,12 @@ Auth::routes();
 
 Route::get('/p/create', 'PostsController@create');
 Route::post('/p', 'PostsController@store');
+Route::get('/p/{post}', 'PostsController@show');
 
 
 Route::get('/profil/{user}', 'ProfilsController@index')->name('profil.show');
+Route::get('/profil/{user}/edit', 'ProfilsController@edit')->name('profil.edit');
+Route::patch('/profil/{user}', 'ProfilsController@update')->name('profil.update');
 
 //cette route dessous car au dessus on veut la page du profil d'un user
 //Route::get('/home', 'HomeController@index')->name('home');
