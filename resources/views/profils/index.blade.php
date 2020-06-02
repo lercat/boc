@@ -11,7 +11,7 @@
                 <div class="d-flex align-items-center pb-3">
                     <div class="h3">{{ $user->username }}</div>
                     <img src="../assets/img/coeur.png" class="pl-3"  alt="coeur">
-                <button class="btn btn-dark ml-3">Follow</button>
+                    <follow-button user-id="{{ $user->id }}"> </follow-button>
                 </div>
 
                 @can('update', $user->profil)
