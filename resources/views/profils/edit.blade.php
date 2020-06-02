@@ -75,7 +75,7 @@
         <div class="row">
             <div class="col-8 offset-2">
                 <div class="form-group row">
-                    <label for="image" class="col-md-4 col-form-label">{{ __('Image du profl') }}</label>
+                    <label for="image" class="col-md-4 col-form-label">{{ __('Image du profil') }}</label>
                 
                         <input id="image" 
                         type="file" 

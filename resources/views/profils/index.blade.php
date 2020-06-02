@@ -4,11 +4,16 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="../../assets/img/cheers.jpg" class="rounded-circle" alt="cheers">
+            <img src="{{ $user->profil->profilImage() }}" class="rounded-circle w-100" alt="image du profil">
         </div>
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
-                <h2>{{ $user->username }}</h2>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h3">{{ $user->username }}</div>
+                    <img src="../assets/img/coeur.png" class="pl-3"  alt="coeur">
+                <button class="btn btn-dark ml-3">Follow</button>
+                </div>
+
                 @can('update', $user->profil)
                     <a href="/p/create">Ajouter un post</a>
                 @endcan
